@@ -1,10 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite' // 👈 新增这一行
 
 export default defineConfig({
   base: '/wps-computer-quiz-project/', 
-  plugins: [react()],
-  // 增加下面这段配置，强制去重，只使用唯一的一个 React 实例
+  plugins: [
+    tailwindcss(), // 👈 新增这一行
+    react()
+  ],
   resolve: {
     dedupe: ['react', 'react-dom']
   }
